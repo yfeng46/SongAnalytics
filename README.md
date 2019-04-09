@@ -30,10 +30,37 @@
 
 ## Backlog
 **Develop Themes**: 
-* An user without any background in lyric wirting can easily use the app to generate a lyric.
+* An user without any background in lyric writing can easily use the app to generate a lyric.
 * Users can randomly input a word and the app will output a legit lyric that could give user inspiration.
 * With different words inputs, app will render different lyrics.
 
+**Epic 1**: Data Preparation
+There are several lyric dataset available online for modeling.
+
+* Story 1: Merge databases (1 point)
+  * Backlog
+  * Merge several datasets to include more lyrics
+
+* Story 2: EDA (2 point)
+  * Backlog
+  * Explore the potential variables that could be used for differentiate lyrics so that users have more power to specify the desired output
+  
+**Epic 2**: Modeling
+Build the sequential model based on the data above to generate lyrics with user inputs.
+
+* Story 1: Build initial model (4 points)
+  * Backlog
+  * Build the model that will intake a word and will generate a lyric based on the input word
+  * Add randomness in the model so that a word input will possibly have different outputs
+
+* Story 2: Add model input based on the EDA outcome (8 points)
+  * Backlog
+  * From the EDA step above, add other input to enable users to further specify their desired output
+  * Re-organized the background data if necessary
+  
+* Story 3: Model review with QA partner (2 points)
+  * Backlog
+  * Review the model with QA partner based on the machine learning criteria as well as the user satisfaction
 
 To form your backlog, the following steps should be taken:
 
