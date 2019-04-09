@@ -3,7 +3,7 @@
 <!-- toc -->
 
 - [Project Charter](#project-charter)
-- [Project Charter](#backlog)
+- [Backlog](#backlog)
 - [Repo structure](#repo-structure)
 - [Documentation](#documentation)
 - [Running the application](#running-the-application)
