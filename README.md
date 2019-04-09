@@ -3,6 +3,7 @@
 <!-- toc -->
 
 - [Project Charter](#project-charter)
+- [Project Charter](#backlog)
 - [Repo structure](#repo-structure)
 - [Documentation](#documentation)
 - [Running the application](#running-the-application)
@@ -29,12 +30,26 @@
 To form your backlog, the following steps should be taken:
 
 Develop themes: Desired business outcomes from project charter.
+
+
 Break themes down into epics: Break themes down into a set of work plans - larger chunks of work with a common objective.
+
+
 Write stories: Units of work that make up an epic. These are concrete activities that can be completed in an estimable amount of time.
+
+
 Split stories into backlog and icebox
+
+
 Backlog is the set of planned stories that can be prioritized.
+
+
 Icebox is where to put:
+
+
 Stories to be completed at a later stage that are larger and not yet broken down or
+
+
 Ideas that you may or may not follow through on
 Nice-to-haves but not requirements according to the current plan/timeline/charter.
 Prioritize the backlog.
