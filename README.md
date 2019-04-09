@@ -25,6 +25,33 @@
 **Success criteria**: After the lyrics is generated, users will be asked to rate their satisfaction of the generated lyrics in the scale 1 to 10. Consider the project is successiful if the satisfaction rate of user experience is higher than 8/10. 
 
 
+## Backlog
+To form your backlog, the following steps should be taken:
+
+Develop themes: Desired business outcomes from project charter.
+Break themes down into epics: Break themes down into a set of work plans - larger chunks of work with a common objective.
+Write stories: Units of work that make up an epic. These are concrete activities that can be completed in an estimable amount of time.
+Split stories into backlog and icebox
+Backlog is the set of planned stories that can be prioritized.
+Icebox is where to put:
+Stories to be completed at a later stage that are larger and not yet broken down or
+Ideas that you may or may not follow through on
+Nice-to-haves but not requirements according to the current plan/timeline/charter.
+Prioritize the backlog.
+Prioritize stories in the backlog from top (highest priority) to bottom (lowest priority)
+Label which stories are planned for the next two weeks. These should be the top stories as this sprint will be prioritized over future sprint stories.
+The rest of the backlog is there and prioritized in the cases that all planned stories are completed with still time to spare.
+It’s okay if not all the stories are completed. Stories can be discarded if they are found unnecessary.
+Icebox stories don’t need to be prioritized.
+Size each story.
+The time estimation doesn’t have to be exact but more a sort of t-shirt sizing to understand the magnitude of work planned. You can assign points as follows:
+0 points - quick chore
+1 point ~ 1 hour (small)
+2 points ~ 1/2 day (medium)
+4 points ~ 1 day (large)
+8 points - big and needs to be broken down more when it comes to execution (okay as placeholder for future work though)
+Current/backlog stories must have sizes but icebox stories don’t need them as they may be broken out further or it may be unclear what the effort required will be without further work.
+
 ## Repo structure 
 
 ```
