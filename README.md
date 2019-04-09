@@ -21,12 +21,18 @@
 
 **Vision**: To help every music-lover, even the one who is not familiar with song writing, to write song lyrics.
 
-**Mission**: With a few straightforward user input, such as theme, specific years' trend the user want to follow and etc, a user can have a lyrics written out in a second.
+**Mission**: With a few straightforward user inputs, such as theme, specific word to be included and etc, a user can have a lyrics written out in a second.
 
-**Success criteria**: After the lyrics is generated, users will be asked to rate their satisfaction of the generated lyrics in the scale 1 to 10. Consider the project is successiful if the satisfaction rate of user experience is higher than 8/10. 
+**Success criteria**: 
+* ML criteria: use cross entropy loss function to train the model. The final entropy could be used to measure the model.
+
+* Business criteria: After the lyrics is generated, users will be asked to rate their satisfaction of the generated lyrics in the scale 1 to 10. Consider the project is successiful if the satisfaction rate of user experience is higher than 8/10. 
 
 
 ## Backlog
+**Develop Themes**: 
+* Users can randomly input a word and the app will output a legit lyric that could give user inspiration.
+* With different words inputs, app will render different lyrics
 To form your backlog, the following steps should be taken:
 
 Develop themes: Desired business outcomes from project charter.
@@ -48,8 +54,6 @@ Icebox is where to put:
 
 
 Stories to be completed at a later stage that are larger and not yet broken down or
-
-
 Ideas that you may or may not follow through on
 Nice-to-haves but not requirements according to the current plan/timeline/charter.
 Prioritize the backlog.
