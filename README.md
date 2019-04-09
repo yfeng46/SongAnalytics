@@ -18,14 +18,12 @@
 
 ## Project Charter 
 
-**Vision**: To enable animals everywhere to enjoy music just for them. 
+**Vision**: To help every music-lover, even the one who is not familiar with song writing, to write song lyrics.
 
-**Mission**: Enable users to add songs that they like and produce new song recommendations based on their entries.
+**Mission**: With a few straightforward user input, such as theme, specific years' trend the user want to follow and etc, a user can have a lyrics written out in a second.
 
-**Success criteria**: Users play 80% of recommended songs more than once. 
+**Success criteria**: After the lyrics is generated, users will be asked to rate their satisfaction of the generated lyrics in the scale 1 to 10. Consider the project is successiful if the satisfaction rate of user experience is higher than 8/10. 
 
-
-_Note_: Project charters should actually be more detailed than this! But this is where the charter belongs.  
 
 ## Repo structure 
 
