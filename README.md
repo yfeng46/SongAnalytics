@@ -37,8 +37,9 @@
 **Epic 1**: Data Preparation
 There are several lyric dataset available online for modeling.
 
-* Story 1: Merge databases (1 point)
+* Story 1: Merge databases (2 point)
   * Backlog
+  * Online datasets searching
   * Merge several datasets to include more lyrics
 
 * Story 2: EDA (2 point)
@@ -53,52 +54,27 @@ Build the sequential model based on the data above to generate lyrics with user 
   * Build the model that will intake a word and will generate a lyric based on the input word
   * Add randomness in the model so that a word input will possibly have different outputs
 
-* Story 2: Add model input based on the EDA outcome (8 points)
+* Story 2: Add model input based on the EDA outcome (4 points)
   * Backlog
   * From the EDA step above, add other input to enable users to further specify their desired output
   * Re-organized the background data if necessary
   
-* Story 3: Model review with QA partner (2 points)
+* Story 3: Model review with QA partner (4 points)
   * Backlog
   * Review the model with QA partner based on the machine learning criteria as well as the user satisfaction
+  * Move both datasets and model to AWS server
+  
+**Epic 3**: Web App Building
+Build the web app to enable users access the model through web interface.
 
-To form your backlog, the following steps should be taken:
-
-Develop themes: Desired business outcomes from project charter.
-
-
-Break themes down into epics: Break themes down into a set of work plans - larger chunks of work with a common objective.
-
-
-Write stories: Units of work that make up an epic. These are concrete activities that can be completed in an estimable amount of time.
-
-
-Split stories into backlog and icebox
-
-
-Backlog is the set of planned stories that can be prioritized.
-
-
-Icebox is where to put:
-
-
-Stories to be completed at a later stage that are larger and not yet broken down or
-Ideas that you may or may not follow through on
-Nice-to-haves but not requirements according to the current plan/timeline/charter.
-Prioritize the backlog.
-Prioritize stories in the backlog from top (highest priority) to bottom (lowest priority)
-Label which stories are planned for the next two weeks. These should be the top stories as this sprint will be prioritized over future sprint stories.
-The rest of the backlog is there and prioritized in the cases that all planned stories are completed with still time to spare.
-It’s okay if not all the stories are completed. Stories can be discarded if they are found unnecessary.
-Icebox stories don’t need to be prioritized.
-Size each story.
-The time estimation doesn’t have to be exact but more a sort of t-shirt sizing to understand the magnitude of work planned. You can assign points as follows:
-0 points - quick chore
-1 point ~ 1 hour (small)
-2 points ~ 1/2 day (medium)
-4 points ~ 1 day (large)
-8 points - big and needs to be broken down more when it comes to execution (okay as placeholder for future work though)
-Current/backlog stories must have sizes but icebox stories don’t need them as they may be broken out further or it may be unclear what the effort required will be without further work.
+* Story 1: UI design of the web app (8 points)
+  * Backlog
+  * Depends on the functionality of the model, the web app should have reasonable user input and output design
+  
+* Story 2: Beautify (8 points)
+  * Icebox
+  * Beautify the web app if time permits
+  
 
 ## Repo structure 
 
