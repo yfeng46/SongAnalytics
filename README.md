@@ -19,7 +19,7 @@
 
 ## Project Charter 
 
-**Vision**: Try to figure out the "secret recipe" that make a song popular and to understand the difference in popularity trend between different years/genre.
+**Vision**: Nowadays music is a lucrative industry and is in everywhere of people's life. The project is tend to use the data science to figure out the "secret recipe" that make a song popular and to understand the difference in popularity trend between different years/genre.
 
 **Mission**: By inputting information of a song such as lyric, genre and etc., the web app will predict the popularity rank from 1 (the most popular) to 100 (the least popular).
 
