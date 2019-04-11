@@ -25,7 +25,7 @@
 
 **Success criteria**: 
 * ML criteria: The dataset will be separated into training set and testing set. MSE could be used as the machine learning measurement to evaluate models and choose the optimal one.  
-* Business criteria: By predicting the popularity of a song, the web app could possibly help song writers to increase exposures of their songs and thus increase their incomes. The success of the app could be measured by the year of year increase in income of active users.
+* Business criteria: By predicting the popularity of a song, the web app could possibly help song writers to increase exposures of their songs and thus increase their incomes. The success of the app could be measured by users satisfication rate as well as the year of year increase in income of active users.
 
 
 ## Backlog
