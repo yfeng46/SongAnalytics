@@ -19,45 +19,39 @@
 
 ## Project Charter 
 
-**Vision**: To help every music-lover, even the one who is not familiar with song writing, to write song lyrics.
+**Vision**: Try to figure out the "secret recipe" that make a song popular and to understand the difference in popularity trend between different years/genre.
 
-**Mission**: With a few straightforward user inputs, such as theme, specific word to be included and etc, a user can have a lyrics written out in a second.
+**Mission**: By inputting information of a song such as lyric, genre and etc., the web app will predict the popularity rank from 1 (the most popular) to 100 (the least popular).
 
 **Success criteria**: 
-* ML criteria: Use cross entropy loss function to train the model. Model should minize the cross entropy to ensure it learns the most from the training data. The final entropy could be used to measure the model performance.
-* Business criteria: After the lyrics is generated, users will be asked to rate their satisfaction of the generated lyrics in the scale 1 to 10. Consider the project is successiful if the satisfaction rate of user experience is higher than 8/10. 
+* ML criteria: The dataset will be separated into training set and testing set. MSE could be used as the machine learning measurement to evaluate models and choose the optimal one.  
+* Business criteria: By predicting the popularity of a song, the web app could possibly help song writers to increase exposures of their songs and thus increase their incomes. The success of the app could be measured by the year of year increase in income of active users.
 
 
 ## Backlog
 **Develop Themes**: 
-* An user without any background in lyric writing can easily use the app to generate a lyric.
-* Users can randomly input a word and the app will output a legit lyric that could give user inspiration.
-* With different words inputs, app will render different lyrics.
+* With information about a song, the app will predict its popularity which could possibly help user to increase the songs popularity, which eventually increase song-writers income.
+* By predicting the songs' popularities, the app can help user to choose between songs.
 
 **Epic 1**: Data Preparation
-There are several lyric dataset available online for modeling.
+There are several datasets available online about songs and their popularity measured by Billboard rankings.
 
-* Story 1: Merge databases (2 point)
+* Story 1: Merge databases (4 point)
   * Backlog
   * Online datasets searching
-  * Merge several datasets to include more lyrics
+  * Merge several datasets to include more features of songs that will be needed for modeling
 
 * Story 2: EDA (2 point)
   * Backlog
-  * Explore the potential variables that could be used for differentiate lyrics so that users have more power to specify the desired output
+  * Explore the potential variables that could be used to better predict the songs' popularities
   
 **Epic 2**: Modeling
-Build the sequential model based on the data above to generate lyrics with user inputs.
+Build the predicting models such as linear regression, neural networks and etc. Choose the optimal model by the ML metrics.
 
-* Story 1: Build initial model (4 points)
+* Story 1: Build initial models (4 points)
   * Backlog
-  * Build the model that will intake a word and will generate a lyric based on the input word
-  * Add randomness in the model so that a word input will possibly have different outputs
-
-* Story 2: Add model input based on the EDA outcome (4 points)
-  * Backlog
-  * From the EDA step above, add other input to enable users to further specify their desired output
-  * Re-organized the background data if necessary
+  * Build several predicting models with features from the first epic.
+  * Use common ML metrics and test dataset to choose the final model.
   
 * Story 3: Model review with QA partner (4 points)
   * Backlog
