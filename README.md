@@ -3,7 +3,7 @@
 <!-- toc -->
 
 - [Project Charter](#project-charter)
-- [Backlog](#backlog)
+- [Planning](#planning)
 - [Repo structure](#repo-structure)
 - [Documentation](#documentation)
 - [Running the application](#running-the-application)
@@ -28,7 +28,7 @@
 * Business criteria: By predicting the popularity of a song, the web app could possibly help song writers to increase exposures of their songs and thus increase their incomes. The success of the app could be measured by users satisfication rate as well as the year of year increase in income of active users.
 
 
-## Backlog
+## Planning
 **Develop Themes**: 
 * With information about a song, the app will predict its popularity which could possibly help user to increase the songs popularity, which eventually increase song-writers income.
 * By predicting the songs' popularities, the app can help user to choose between songs.
@@ -36,39 +36,40 @@
 **Epic 1**: Data Preparation
 There are several datasets available online about songs and their popularity measured by Billboard rankings.
 
-* Story 1: Merge databases (4 point)
-  * Backlog
-  * Online datasets searching
-  * Merge several datasets to include more features of songs that will be needed for modeling
+* **Backlog**
+  * Story 1: Merge databases (4 point)
+    * Online datasets searching
+    * Merge several datasets to include more features of songs that will be needed for modeling
 
-* Story 2: EDA (2 point)
-  * Backlog
-  * Explore the potential variables that could be used to better predict the songs' popularities
+  * Story 2: EDA (2 point)
+    * Explore the potential variables that could be used to better predict the songs' popularities
+    * Perform necessary variables transformation
   
 **Epic 2**: Modeling
 Build the predicting models such as linear regression, neural networks and etc. Choose the optimal model by the ML metrics.
 
-* Story 1: Build initial models (4 points)
-  * Backlog
-  * Build several predicting models with features from the first epic.
-  * Use common ML metrics and test dataset to choose the final model.
-  
-* Story 3: Model review with QA partner (4 points)
-  * Backlog
-  * Review the model with QA partner based on the machine learning criteria as well as the user satisfaction
-  * Move both datasets and model to AWS server
+* **Backlog** 
+  * Story 1: Build initial models (4 points)
+    * Build several predicting models with features from the first epic.
+    * Use common ML metrics and test dataset to choose the final model.
+
+  * Story 3: Model review with QA partner (4 points)
+    * Review the model with QA partner based on the machine learning criteria as well as the user satisfaction
+    * Move both datasets and model to AWS server
   
 **Epic 3**: Web App Building
 Build the web app to enable users access the model through web interface.
 
-* Story 1: UI design of the web app (8 points)
-  * Backlog
-  * Depends on the functionality of the model, the web app should have reasonable user input and output design
-  
-* Story 2: Beautify (8 points)
-  * Icebox
-  * Beautify the web app if time permits
-  
+* **Backlog**
+  * Story 1: UI design of the web app (8 points)
+    * Depends on the functionality of the model, the web app should have reasonable user input and output design
+
+* **Icebox**
+  * Story 2: Beautify (8 points)
+    * Beautify the web app if time permits
+
+## Plan for Two Weeks
+* Finish the epic 1 and start the initial modeling.
 
 ## Repo structure 
 
