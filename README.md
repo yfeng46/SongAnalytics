@@ -1,7 +1,7 @@
 # MSiA423 Project Song Analytics 
 
-Yi (Joyce) Feng
-Yucheng Zhu
+* Owner: Yi (Joyce) Feng
+* QA: Yucheng Zhu
 <!-- toc -->
 
 - [Project Charter](#project-charter)
