@@ -1,5 +1,7 @@
-# Example project repository
+# MSiA423 Project Song Analytics 
 
+Yi (Joyce) Feng
+Yucheng Zhu
 <!-- toc -->
 
 - [Project Charter](#project-charter)
