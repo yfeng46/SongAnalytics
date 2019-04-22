@@ -37,6 +37,8 @@
 
 **Epic 1**: Data Preparation
 There are several datasets available online about songs and their popularity measured by Billboard rankings.
+Main datasource come from Billboard package in R, which contains songs' information from 1960 to 2016.
+https://cran.r-project.org/web/packages/billboard/billboard.pdf
 
 * **Backlog**
   * Story 1: Merge databases (4 point)
