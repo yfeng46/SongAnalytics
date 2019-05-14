@@ -28,7 +28,7 @@ def download_data(url,filename,save_path):
 	print(path)
 	df = pd.read_csv(path,sep=',')
     df.to_csv(save_path)
-
+    return df
 
 
 if __name__ == "__main__":
