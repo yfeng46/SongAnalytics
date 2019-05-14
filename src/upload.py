@@ -2,7 +2,7 @@ import boto3
 import argparse
 s3 = boto3.client("s3")
 
-def download_data(args):
+def upload_data(args):
     s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
 
 
