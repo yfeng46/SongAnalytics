@@ -24,7 +24,9 @@ import pandas as pd
 
 
 def download_data(url,filename,save_path):
-    df = pd.read_csv(url+filename,sep=';')
+	path = url+filename
+	print(path)
+    df = pd.read_csv(path,sep=',')
     df.to_csv(save_path)
 
 
