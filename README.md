@@ -20,6 +20,7 @@
 <!-- tocstop -->
 
 ## Project Charter 
+**Midpoint Check**
 
 **Vision**: Nowadays music is a lucrative industry and is in everywhere of people's life. The project is tend to use the data science to figure out the "secret recipe", such as lyrics, length and so on, that make a song popular and to understand the difference in popularity trend between different years/genre.
 
