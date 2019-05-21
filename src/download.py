@@ -5,24 +5,36 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 def download_data(url,filename,save_path):
-	df = pd.DataFrame{}
+	"""download data from s3 to local
+	url(string): 
+		preset url to the s3 bucket
+	filename(string):
+		name of the file or list of the names of the files to download
+	save_path(string):
+		path of the file(s) to be saved after downloading
+	returns: None"""
+	
 	if isinstance(filename, list):
+		#if filename is a list, downloading multiple files
 		for file in filename:
 			path = url+filename
 			logger.info("download file from "+path)
 			df = pd.read_csv(path,sep=',')
 			df.to_csv(save_path+file)
 			logger.info("save the file to "+save_path+file)
+
 	elif isinstance(filename, str):
+		#else, if filename is a single string, download one file
 		path = url+filename
 		logger.info("download file from "+path)
 		df = pd.read_csv(path,sep=',')
 		df.to_csv(save_path+file)
 		logger.info("save the file to "+save_path+file)
 	else:
+		#else, raise error
 		raise CustomException(filename+" is not a valid file name.")
 
-	return df
+	return
 
 
 if __name__ == "__main__":
