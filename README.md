@@ -135,6 +135,7 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 
 ## Running the application 
 ### 1. Set up environment 
+Please cd to the SongAnalytics folder first to create the environment and run the following steps.
 
 The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. See bottom of README for exploratory data analysis environment setup. 
 
@@ -159,37 +160,32 @@ pip install -r requirements.txt
 
 ```
 
-### 2. Configure Flask app 
 
-`config.py` holds the configurations for the Flask app. It includes the following configurations:
-
-```python
-DEBUG = True  # Keep True for debugging, change to False when moving to production 
-LOGGING_CONFIG = "config/logging/local.conf"  # Path to file that configures Python logger
-PORT = 3002  # What port to expose app on 
-SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/tracks.db'  # URI for database that contains tracks
-
-```
-
-
-### 3. Initialize the database 
+### 2. Initialize the database 
 
 To create the database in the location configured in `config.py` with one initial song, run: 
 
-`python run.py create --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+`python download.py  --fileName=<FILE>(optional) --output_path=<PATH>`
 
-To add additional songs:
+Default is to download all three database that the model will use: lyrics.csv, wiki_hot_100s.csv and spotify_track_data.csv
+Or user could specify the file to download.
+Output path is the directory ended with "/" to save the downloaded file(s).
 
-`python run.py ingest --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+To upload data to the S3 database, run
 
+`python upload.py  --input_file_path=<INPUT> --bucket_name=<BUCKET> --output_file=<OUTPUT>`
 
-### 4. Run the application 
+To create the sql database in RDS, run:
+
+`python tables.py`
+
+### 3. Run the application 
  
  ```bash
  python app.py 
  ```
 
-### 5. Interact with the application 
+### 4. Interact with the application 
 
 Go to [http://127.0.0.1:3000/]( http://127.0.0.1:3000/) to interact with the current version of hte app. 
 
