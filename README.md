@@ -178,6 +178,7 @@ Output path is the directory ended with "/" to save the downloaded file(s).
 
 To upload data to the S3 database, run
 
+
 `python upload.py  --input_file_path=<INPUT> --bucket_name=<BUCKET> --output_file_path=<OUTPUT>`
 
 To create the sql database in RDS, run:
