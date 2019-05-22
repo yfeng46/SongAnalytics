@@ -12,7 +12,8 @@ def upload_data(args):
 		Argparse args - should include args.input_file_path, args.bucket_name, args.output_file_path
 	return:
 		none"""
-	s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
+	s3.upload_file(args.input_file_path, args.bucket_name, args.output_file_path)
+	return
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Upload data to S3")
