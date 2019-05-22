@@ -13,7 +13,6 @@ def upload_data(args):
 	return:
 		none"""
 	s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
-	logger.info("Uploaded the file to " + args.bucket_name + " as "+args.output_file_path)
     
 
 
@@ -28,6 +27,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     logger.info("Uploading the file from: "+args.input_file_path)
+    logger.info("Uploaded the file to " + args.bucket_name + " as "+args.output_file_path)
     upload_data(args)
 
 
