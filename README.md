@@ -20,6 +20,7 @@
 <!-- tocstop -->
 
 ## Project Charter 
+**This Branch is for Midpoint Check**
 
 **Vision**: Nowadays music is a lucrative industry and is in everywhere of people's life. The project is tend to use the data science to figure out the "secret recipe", such as lyrics, length and so on, that make a song popular and to understand the difference in popularity trend between different years/genre.
 
@@ -169,11 +170,16 @@ To create the database in the location configured in `config.py` with one initia
 
 Default is to download all three database that the model will use: lyrics.csv, wiki_hot_100s.csv and spotify_track_data.csv
 Or user could specify the file to download.
+
+To run the default setting:
+`python download.py`
+
 Output path is the directory ended with "/" to save the downloaded file(s).
 
 To upload data to the S3 database, run
 
-`python upload.py  --input_file_path=<INPUT> --bucket_name=<BUCKET> --output_file=<OUTPUT>`
+
+`python upload.py  --input_file_path=<INPUT> --bucket_name=<BUCKET> --output_file_path=<OUTPUT>`
 
 To create the sql database in RDS, run:
 
@@ -192,6 +198,3 @@ Go to [http://127.0.0.1:3000/]( http://127.0.0.1:3000/) to interact with the cur
 ## Testing 
 
 Run `pytest` from the command line in the main project repository. 
-
-
-Tests exist in `test/test_helpers.py`
