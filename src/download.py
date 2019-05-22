@@ -18,7 +18,7 @@ def download_data(url,filename,save_path):
 	if isinstance(filename, list):
 		#if filename is a list, downloading multiple files
 		for file in filename:
-			path = url+filename
+			path = url+file
 			logger.info("download file from "+path)
 			df = pd.read_csv(path,sep=',')
 			df.to_csv(save_path+file)
