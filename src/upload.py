@@ -6,13 +6,15 @@ logger = logging.getLogger(__name__)
 s3 = boto3.client("s3")
 
 def upload_data(args):
+
 		"""upload data from local to s3
 	args:
 		Argparse args - should include args.input_file_path, args.bucket_name, args.output_file_path
 	return:
 		none"""
-    s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
-    logger.info("Uploaded the file to " + args.bucket_name + " as "+args.output_file_path)
+	s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
+	logger.info("Uploaded the file to " + args.bucket_name + " as "+args.output_file_path)
+    
 
 
 
