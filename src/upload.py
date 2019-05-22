@@ -13,22 +13,20 @@ def upload_data(args):
 	return:
 		none"""
 	s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
-    
-
-
+	return
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Upload data to S3")
+	parser = argparse.ArgumentParser(description="Upload data to S3")
 
-    # add argument
-    parser.add_argument("--input_file_path", type=str, help="local path for uploaded file")
-    parser.add_argument("--bucket_name", type=str, help="s3 bucket name")
-    parser.add_argument("--output_file_path", type=str, help="output path for uploaded file")
+	# add argument
+	parser.add_argument("--input_file_path", type=str, help="local path for uploaded file")
+	parser.add_argument("--bucket_name", type=str, help="s3 bucket name")
+	parser.add_argument("--output_file_path", type=str, help="output path for uploaded file")
 
-    args = parser.parse_args()
-    logger.info("Uploading the file from: "+args.input_file_path)
-    logger.info("Uploaded the file to " + args.bucket_name + " as "+args.output_file_path)
-    upload_data(args)
+	args = parser.parse_args()
+	logger.info("Uploading the file from: "+args.input_file_path)
+	logger.info("Uploaded the file to " + args.bucket_name + " as "+args.output_file_path)
+	upload_data(args)
 
 
 
