@@ -3,7 +3,6 @@ import argparse
 import logging
 
 logger = logging.getLogger(__name__)
-
 s3 = boto3.client("s3")
 
 def upload_data(args):
