@@ -8,26 +8,10 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from src.tables import prediction
 from src.read_data import clean_data
 
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-
-
-
-# def test_database():
-# 	# Initialize the Flask application
-# 	app = Flask(__name__)
-
-# 	# Configure flask app from config.py
-# 	app.config.from_object('config')
-
-# 	# Initialize the database
-# 	db = SQLAlchemy(app)
-
-# 	result = db.session.query(prediction).get(1)
-# 	assert (result.user_input,result.danceability) == ("Quando sono solo Sogno all'orizzonte E mancan le parole Sì lo so che non c'è luce In una stanza quando manca il sole Se non ci sei tu con me, con me",0.05)
 
 def test_split():
 	lyrics = "test/lyrics_test.csv"
