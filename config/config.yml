@@ -1,0 +1,21 @@
+project:
+  load_data:
+      how: download csv online
+      url:
+        'https://s3-us-west-2.amazonaws.com/nu-yifeng/'
+      files: ["lyrics.csv","spotify_track_data.csv","wiki_hot_100s.csv"]
+      folder: data/
+  read_data:
+      lyrics: data/lyrics.csv
+      tracks: data/spotify_track_data.csv
+      billboard: data/wiki_hot_100s.csv
+      train: data/lyrics_track_train.csv
+      test: data/lyrics_track_test.csv
+  train_model:
+    model: models/model.sav
+  database:
+      db: song_analytics.db
+  post_process:
+      input_model: models/model.sav
+      test: data/lyrics_track_test.csv
+      output: models/evaluation.txt
