@@ -24,6 +24,7 @@ HOST = "0.0.0.0"
 MAX_ROWS_SHOW = 30
 MODEL = "models/model.sav"
 
+# # config for local
 # DEBUG = True
 # LOGGING_CONFIG = "config/logging/local.conf"
 # PORT = 3002
