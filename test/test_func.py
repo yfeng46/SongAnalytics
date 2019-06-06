@@ -2,6 +2,7 @@ import logging.config
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 import sys
 import os
@@ -9,6 +10,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from src.tables import prediction
 from src.read_data import clean_data
+
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 
@@ -26,12 +30,12 @@ from src.read_data import clean_data
 # 	assert (result.user_input,result.danceability) == ("Quando sono solo Sogno all'orizzonte E mancan le parole Sì lo so che non c'è luce In una stanza quando manca il sole Se non ci sei tu con me, con me",0.05)
 
 def test_split():
-	lyrics = "lyrics_test.csv"
-	tracks = "spotify_track_data_test.csv"
-	billboard = "wiki_hot_100s_test.csv"
-	df_lyrics = pd.read_csv(lyrics)
-	df_tracks = pd.read_csv(tracks)
-	df_hot = pd.read_csv(billboard)
+	lyrics = "test/lyrics_test.csv"
+	tracks = "test/spotify_track_data_test.csv"
+	billboard = "test/wiki_hot_100s_test.csv"
+	df_lyrics = pd.read_csv(lyrics,index_col=0)
+	df_tracks = pd.read_csv(tracks,index_col=0)
+	df_hot = pd.read_csv(billboard,index_col=0)
 
 	#clean the tie string in ranking
 	tieIndex = df_hot.index[df_hot['no']=='Tie'].tolist()
@@ -70,8 +74,16 @@ def test_split():
 	df_lyrics_track = pd.merge(df_lyrics, df_tracks, left_on='join_key', right_on='join_key', how='inner')
 	df_lyrics_track.dropna()
 
-	test = train_test_split(df_lyrics_track,test_size=0.3,random_state=123)
-	result = clean_data(lyrics,tracks,billboard)
-	assert test == result
+	test_train,test_test = train_test_split(df_lyrics_track,test_size=0.3,random_state=123)
+	(result_train,result_test) = clean_data(lyrics,tracks,billboard)
+	# result_train = result[0]
+	# result_test = result[1]
+	test_train.reset_index(drop=True,inplace=True)
+	test_test.reset_index(drop=True,inplace=True)
+	result_train.reset_index(drop=True,inplace=True)
+	result_test.reset_index(drop=True,inplace=True)
+	assert (test_train.equals(result_train)) and (test_test.equals(result_test))
+	
+
 
 
