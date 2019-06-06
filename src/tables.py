@@ -88,7 +88,7 @@ class billboard_tracks(Base):
 
 
 def database(rds):
-	if rds == 'True':
+	if rds == True:
 		# the engine_string format
 		#engine_string = "{conn_type}://{user}:{password}@{host}:{port}/DATABASE_NAME"
 		conn_type = "mysql+pymysql"
