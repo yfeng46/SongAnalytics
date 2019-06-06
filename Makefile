@@ -30,8 +30,10 @@ models/evaluation.txt: src/evaluate.py
 evaluate: models/evaluation.txt
 
 song_analytics.db: src/tables.py
-	python run.py database --flag=false
+	python run.py database
 database: song_analytics.db
+
+
 
 
 
