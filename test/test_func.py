@@ -14,6 +14,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 def test_split():
+	"""unitest for the clean_data function"""
 	lyrics = "test/lyrics_test.csv"
 	tracks = "test/spotify_track_data_test.csv"
 	billboard = "test/wiki_hot_100s_test.csv"
