@@ -29,11 +29,14 @@ models/evaluation.txt: src/evaluate.py
 	python run.py evaluate --config=config/config.yml
 evaluate: models/evaluation.txt
 
+#build the database
 song_analytics.db: src/tables.py
 	python run.py database
 database: song_analytics.db
 
-
+#unitest
+test: venv
+	source test-env/bin/activate; pytest
 
 
 
