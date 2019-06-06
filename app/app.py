@@ -1,11 +1,15 @@
 import traceback
 from flask import render_template, request, redirect, url_for
-#import logging.config
+import logging.config
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from src.tables import prediction
-import logging.config
 import pickle
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from src.tables import prediction
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -39,8 +43,8 @@ def index():
 
 @app.route('/input', methods=['POST'])
 def predict():
-    """View that process a POST with new song input
-    :return: redirect to index page
+    """View that process a POST with new lyrics
+    :return: redirect to web.html page with result or error page without result
     """
 
     try:
@@ -54,15 +58,20 @@ def predict():
         logger.info("Loaded model from " + filename)
         #using model for prediction
         dance = loaded_model.predict([lyrics])
+
+
+
         prediction1 = prediction(user_input=lyrics,danceability=float(dance))
         db.session.add(prediction1)
-
         db.session.commit()
+        
+
+
         logger.info("New prediction of danceability added")
         return render_template('web.html',result=dance)
     except:
         traceback.print_exc()
-        logger.warning("Not able to display tracks, error page returned")
+        logger.warning("Not able to predict, error page returned")
         return render_template('error.html')
 
 @app.route('/home')
