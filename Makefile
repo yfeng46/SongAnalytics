@@ -42,7 +42,7 @@ clean-tests:
 	rm -rf .pytest_cache
 
 clean-env:
-	rm -r pennylane-env
+	rm -r venv-env
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
