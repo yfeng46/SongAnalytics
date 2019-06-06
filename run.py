@@ -12,8 +12,6 @@ logging.config.fileConfig(app.config["LOGGING_CONFIG"])
 logger = logging.getLogger("churn-predictor")
 logger.debug('Test log')
 
-import sys
-sys.path.insert(0,'/home/ubuntu/tes1/SongAnalytics')
 
 from src.download import run_download_data
 from src.read_data import run_clean_data

@@ -12,9 +12,14 @@
   * [1. Set up environment](#1-set-up-environment)
     + [With `virtualenv` and `pip`](#with-virtualenv-and-pip)
     + [With `conda`](#with-conda)
-  * [2. Configure Flask app](#2-configure-flask-app)
-  * [3. Initialize the database](#3-initialize-the-database)
-  * [4. Run the application](#4-run-the-application)
+    + [With `makefile`](#with-make)
+  * [2. Initialize the database](#2-initialize-the-database)
+  * [3. Clean data](#3-clean-data)
+  * [4. Build the model](#4-build-the-model)
+  * [5. Evaluate the model](#5-evaluate-the-model)
+  * [6. Unitest](#6-Unitest)
+  * [7. Run the application](#7-run-the-application)
+  * [8. Interact with the application](#8-interact-with-the-application)
 - [Testing](#testing)
 
 <!-- tocstop -->
@@ -134,11 +139,16 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 * Open up `docs/build/html/index.html` to see Sphinx documentation docs. 
 * See `docs/README.md` for keeping docs up to date with additions to the repository.
 
-## Running the application 
+## Running the application on RDS
+
+#### Run all the code in the root folder.
+
 ### 1. Set up environment 
 Please cd to the SongAnalytics folder first to create the environment and run the following steps.
 
 The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. See bottom of README for exploratory data analysis environment setup. 
+
+##### Make sure that the python of the virtual environment has to be locate at /home/ubuntu/miniconda3/.
 
 #### With `virtualenv`
 
@@ -160,7 +170,12 @@ conda activate pennylane
 pip install -r requirements.txt
 
 ```
+#### With `makefile`
 
+```bash
+make venv
+
+```
 
 ### 2. Initialize the database 
 
@@ -172,29 +187,112 @@ Default is to download all three database that the model will use: lyrics.csv, w
 Or user could specify the file to download.
 
 To run the default setting:
-`python download.py`
+`python src/download.py --config=config/config.yml`
 
 Output path is the directory ended with "/" to save the downloaded file(s).
 
 To upload data to the S3 database, run
 
 
-`python upload.py  --input_file_path=<INPUT> --bucket_name=<BUCKET> --output_file_path=<OUTPUT>`
+`python src/upload.py  --input_file_path=<INPUT> --bucket_name=<BUCKET> --output_file_path=<OUTPUT>`
 
 To create the sql database in RDS, run:
 
-`python tables.py`
+`python src/tables.py --config=config/config.yml`
 
-### 3. Run the application 
+To run the code with makefile, simply use
+```bash
+make download
+
+```
+```bash
+make database
+
+```
+
+If one is running the code locally, database should be created by 
+
+`python src/tables.py --config=config/config.yml --flag=false`
+
+
+### 3. Clean data
+
+To clean the data downloaded from the S3 and to build the training and testing data for the model, run:
+
+`python src/read_data.py --config=config/config.yml`
+
+or with Makefile
+
+```bash
+make read_data
+
+```
+The result csv will be wrote to the data folder.
+
+### 4. Build the model
+
+Once the data folder has the train and test data, model could be built by running
+
+`python src/model.py --config=config/config.yml`
+
+or with Makefile
+
+```bash
+make model
+
+```
+The model will be saved as a .sav file in the models folder.
+
+### 5. Evaluate the model
+
+The model evluation could be got from running
+
+`python src/evaluate.py --config=config/config.yml`
+
+or with Makefile
+
+```bash
+make evaluate
+
+```
+The model will be saved as a .txt file in the models folder.
+
+### 6. Unitest
+
+Unitest of the functions for the model could be done running
+
+`pytest`
+
+or with Makefile
+
+```bash
+make test
+
+```
+
+#### All the code above from environment to unitest could be run by 
+
+```bash
+make all
+
+```
+
+### 7. Run the application 
  
- ```bash
- python app.py 
- ```
+```bash
+python app/app.py
 
-### 4. Interact with the application 
+```
 
-Go to [http://127.0.0.1:3000/]( http://127.0.0.1:3000/) to interact with the current version of hte app. 
+### 8. Interact with the application 
 
-## Testing 
+Go to [http://18.216.140.226:3000/]( http://18.216.140.226:3000/) to interact with the current version of hte app. 
 
-Run `pytest` from the command line in the main project repository. 
+
+
+## Running the application in Local
+
+### Config
+
+For the config.py in the main folder right now, comment out the line 11 to line 25. Use the code from line 28 to line 39.
+The rest of the running procedure is same as the one in rds.

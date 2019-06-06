@@ -1,4 +1,4 @@
-.PHONY: venv download read_data model evaluate database clean-tests clean-pyc clean-env clean
+.PHONY: venv download read_data model evaluate database test clean-tests clean-pyc clean-env clean
 
 # Below are some other make functions that do useful things
 
