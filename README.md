@@ -104,31 +104,31 @@ Build the web app to enable users access the model through web interface.
 │
 ├── figures                           <- Generated graphics and figures to be used in reporting.
 │
-├── models                            <- Trained model objects (TMOs), model predictions, and/or model summaries
+├── models                            <- Trained model objects (TMOs), model evaluation, and/or model summaries
 │   ├── archive                       <- No longer current models. This directory is included in the .gitignore and is not tracked by git
 │
 ├── notebooks
-│   ├── develop                       <- Current notebooks being used in development.
+│   ├── wordCloud                     <- Notebooks that generate the word clouds pictures in the html.
 │   ├── deliver                       <- Notebooks shared with others. 
 │   ├── archive                       <- Develop notebooks no longer being used.
 │   ├── template.ipynb                <- Template notebook for analysis with useful imports and helper functions. 
+
 │
 ├── src                               <- Source data for the project 
 │   ├── archive/                      <- No longer current scripts.
 │   ├── helpers/                      <- Helper scripts used in main src files 
 │   ├── sql/                          <- SQL source code
-│   ├── add_songs.py                  <- Script for creating a (temporary) MySQL database and adding songs to it 
-│   ├── ingest_data.py                <- Script for ingesting data from different sources 
-│   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for use in training and scoring.
-│   ├── train_model.py                <- Script for training machine learning model(s)
-│   ├── score_model.py                <- Script for scoring new predictions using a trained model.
-│   ├── postprocess.py                <- Script for postprocessing predictions and model results
-│   ├── evaluate_model.py             <- Script for evaluating model performance 
+│   ├── tables.py                     <- Script for creating a (temporary) MySQL database and adding songs to it 
+│   ├── download.py                   <- Script for downloading data on S3
+│   ├── read_data.py                  <- Script for cleaning and transforming data for use in training and scoring.
+│   ├── model.py                      <- Script for training machine learning model(s)
+│   ├── evaluate.py                   <- Script for evaluating model performance 
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
 
-├── run.py                            <- Simplifies the execution of one or more of the src scripts 
-├── app.py                            <- Flask wrapper for running the model 
+├── run.py                            <- Simplifies the execution of one or more of the src scripts
+├── app                               <- Source data for the project 
+│   ├── app.py                        <- Flask wrapper for running the model
 ├── config.py                         <- Configuration file for Flask app
 ├── requirements.txt                  <- Python package dependencies 
 ```
@@ -144,6 +144,7 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 #### Run all the code in the root folder.
 
 ### 1. Set up environment 
+
 Please cd to the SongAnalytics folder first to create the environment and run the following steps.
 
 The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. See bottom of README for exploratory data analysis environment setup. 
@@ -178,6 +179,13 @@ make venv
 ```
 
 ### 2. Initialize the database 
+
+If it's the first time running the code, please run the following command in the window
+
+```bash
+export SQLALCHEMY_DATABASE_URI=“{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}”
+
+```
 
 To create the database in the location configured in `config.py` with one initial song, run: 
 

@@ -123,7 +123,7 @@ def create(args):
 	Session = sessionmaker(bind=engine)
 	session = Session()
 	# add dummy prediction
-	dummy_dance = prediction(result_id=1, user_input = "Quando sono solo Sogno all'orizzonte E mancan le parole Sì lo so che non c'è luce In una stanza quando manca il sole Se non ci sei tu con me, con me",danceability=0.05)
+	dummy_dance = prediction(user_input = "Quando sono solo Sogno all'orizzonte E mancan le parole Sì lo so che non c'è luce In una stanza quando manca il sole Se non ci sei tu con me, con me",danceability=0.05)
 	session.add(dummy_dance)
 	session.commit()
 	logger.info("Add the initial data entry to prediction table")
