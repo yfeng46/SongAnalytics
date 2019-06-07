@@ -1,13 +1,7 @@
-.PHONY: venv download read_data model evaluate database test clean-tests clean-pyc clean-env clean
+.PHONY: download read_data model evaluate database test app
 
 # Below are some other make functions that do useful things
 
-# Create a virtual environment named pennylane-env
-venv/bin/activate: requirements.txt
-	test -d venv || virtualenv venv
-	venv/bin/pip install -r requirements.txt
-	touch venv/bin/activate
-venv: venv/bin/activate
 
 # Get data from request
 data/lyrics.csv data/spotify_track_data.csv data/wiki_hot_100s.csv: src/download.py
@@ -36,21 +30,10 @@ database: song_analytics.db
 
 #unitest
 test: venv
-	source test-env/bin/activate; pytest
+	pytest
+
+app: app/app.py
+	python app/app.py
 
 
-
-# Clean up things
-clean-tests:
-	rm -rf .pytest_cache
-
-clean-env:
-	rm -r venv-env
-
-clean-pyc:
-	find . -name '*.pyc' -exec rm -f {} +
-	rm -rf .pytest_cache
-
-clean: clean-tests clean-env clean-pyc
-
-all: venv download read_data model evaluate database test clean-tests clean-pyc clean-env clean
+all: download read_data model evaluate database test app

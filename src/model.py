@@ -9,7 +9,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 import pylab as pl
 from sklearn import preprocessing
@@ -74,7 +73,7 @@ def run_model(args):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Read the csv file")
 	# add argument
-	parser.add_argument("--config",default="config.yml",help='path to yaml file with configurations')
+	parser.add_argument("--config",default="config/config.yml",help='path to yaml file with configurations')
 	parser.add_argument("--train_data", type=str,help="path to csv file of training data")
 	parser.add_argument("--save_model", type=str, help="path to save the model")
 

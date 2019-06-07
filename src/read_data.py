@@ -117,7 +117,7 @@ def run_clean_data(args):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Read the csv file")
 	# add argument
-	parser.add_argument("--config",default="config.yml",help='path to yaml file with configurations')
+	parser.add_argument("--config",default="config/config.yml",help='path to yaml file with configurations')
 	parser.add_argument("--lyrics", type=str,help="path to csv file of lyrics data")
 	parser.add_argument("--tracks", type=str,help="path to csv file of tracks data")
 	parser.add_argument("--billboard",type=str,help="path to csv file of billboard data")

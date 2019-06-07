@@ -61,7 +61,7 @@ def run_evaluate(args):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Read the csv file")
 	# add argument
-	parser.add_argument("--config",default="config.yml",help='path to yaml file with configurations')
+	parser.add_argument("--config",default="config/config.yml",help='path to yaml file with configurations')
 	parser.add_argument("--model", type=str,help="path to the model")
 	parser.add_argument("--train", type=str,help="path to the training data")
 	parser.add_argument("--test",type=str, help="path to the testing data")

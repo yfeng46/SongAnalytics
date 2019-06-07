@@ -42,6 +42,9 @@ def download_data(url,filename,save_path):
 	return
 
 def run_download_data(args):
+	"""run the download function with the args
+	args:
+		input that when run the python"""
 	with open(args.config, "r") as f:
 		config = yaml.load(f,Loader=yaml.SafeLoader)
 		
@@ -61,7 +64,7 @@ def run_download_data(args):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="Download data from S3")
 	# add argument
-	parser.add_argument("--config",default="config.yml",help='path to yaml file with configurations')
+	parser.add_argument("--config",default="config/config.yml",help='path to yaml file with configurations')
 	parser.add_argument("--url", type=str,help="url of database")
 	parser.add_argument("--file_key", type=str,help="Name of the file in S3 that you want to download")
 	parser.add_argument("--output_file_path",type=str,help="output directory for downloaded file")

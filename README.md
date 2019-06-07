@@ -132,14 +132,14 @@ Build the web app to enable users access the model through web interface.
 ├── config.py                         <- Configuration file for Flask app
 ├── requirements.txt                  <- Python package dependencies 
 ```
-This project structure was partially influenced by the [Cookiecutter Data Science project](https://drivendata.github.io/cookiecutter-data-science/).
+
 
 ## Documentation
  
 * Open up `docs/build/html/index.html` to see Sphinx documentation docs. 
 * See `docs/README.md` for keeping docs up to date with additions to the repository.
 
-## Running the application on RDS
+## Running the application in local
 
 #### Run all the code in the root folder.
 
@@ -169,12 +169,6 @@ pip install -r requirements.txt
 conda create -n pennylane python=3.7
 conda activate pennylane
 pip install -r requirements.txt
-
-```
-#### With `makefile`
-
-```bash
-make venv
 
 ```
 
@@ -278,17 +272,26 @@ make test
 
 ```
 
-#### All the code above from environment to unitest could be run by 
+### 7. Run the application 
+ 
+Run the app by python
 
 ```bash
-make all
+python app/app.py
+
+```
+or
+
+```bash
+make app
 
 ```
 
-### 7. Run the application 
- 
+
+#### All the code above from download data to app could be run by 
+
 ```bash
-python app/app.py
+make all
 
 ```
 
