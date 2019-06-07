@@ -53,4 +53,4 @@ clean-pyc:
 
 clean: clean-tests clean-env clean-pyc
 
-all: venv download read_data model evaluate database clean-tests clean-pyc clean-env clean
+all: venv download read_data model evaluate database test clean-tests clean-pyc clean-env clean
