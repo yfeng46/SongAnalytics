@@ -1,9 +1,0 @@
-DEBUG = True
-LOGGING_CONFIG = "../config/logging/local.conf"
-PORT = 3002
-APP_NAME = "song_analytics"
-SQLALCHEMY_DATABASE_URI = 'sqlite:///../song_analytics.db'
-SQLALCHEMY_TRACK_MODIFICATIONS = True
-HOST = "127.0.0.1"
-SQLALCHEMY_ECHO = False  # If true, SQL for queries made will be printed
-MAX_ROWS_SHOW = 100

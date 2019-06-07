@@ -31,7 +31,7 @@ evaluate: models/evaluation.txt
 
 #build the database
 song_analytics.db: src/tables.py
-	python run.py database
+	python run.py database --flag=false
 database: song_analytics.db
 
 #unitest
