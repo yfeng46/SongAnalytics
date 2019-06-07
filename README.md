@@ -12,7 +12,6 @@
   * [1. Set up environment](#1-set-up-environment)
     + [With `virtualenv` and `pip`](#with-virtualenv-and-pip)
     + [With `conda`](#with-conda)
-    + [With `makefile`](#with-make)
   * [2. Initialize the database](#2-initialize-the-database)
   * [3. Clean data](#3-clean-data)
   * [4. Build the model](#4-build-the-model)
@@ -139,7 +138,7 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 * Open up `docs/build/html/index.html` to see Sphinx documentation docs. 
 * See `docs/README.md` for keeping docs up to date with additions to the repository.
 
-## Running the application on RDS
+## Running the application on RDS. For the code to run in the local, please switch to the "local branch".
 
 #### Run all the code in the root folder.
 
@@ -156,7 +155,7 @@ The `requirements.txt` file contains the packages required to run the model code
 ```bash
 pip install virtualenv
 
-virtualenv pennylane
+virtualenv pennylane --python=python3.7
 
 source pennylane/bin/activate
 
@@ -169,12 +168,6 @@ pip install -r requirements.txt
 conda create -n pennylane python=3.7
 conda activate pennylane
 pip install -r requirements.txt
-
-```
-#### With `makefile`
-
-```bash
-make venv
 
 ```
 
