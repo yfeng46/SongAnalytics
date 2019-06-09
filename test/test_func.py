@@ -9,6 +9,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from src.read_data import clean_data
+from src.model import model
 
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -68,7 +69,13 @@ def test_split():
 	result_train.reset_index(drop=True,inplace=True)
 	result_test.reset_index(drop=True,inplace=True)
 	assert (test_train.equals(result_train)) and (test_test.equals(result_test))
-	
+
+def model():
+	"""Testing the model that the return result should be within 0 and 1"""
+	lyrics = "Quando sono solo Sogno all'orizzonte E mancan le parole Sì lo so che non c'è luce In una stanza quando manca il sole Se non ci sei tu con me, con me"
+	test_model = model("lyrics_trac_train_test.xlsx","test_model.sav")
+	dance = test_model.predict([lyrics])
+	assert dance>=0 and dance<=1
 
 
 
