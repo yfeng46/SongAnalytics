@@ -1,7 +1,14 @@
-.PHONY: download read_data model evaluate database test app
+.PHONY: venv download read_data model evaluate database test app clean-tests clean-env clean-pyc
 
 # Below are some other make functions that do useful things
 
+project/bin/activate: requirements.txt
+	test -d project || virtualenv project
+	. project/bin/activate; pip install -r requirements.txt
+	#avcproject/bin/pip install -r requirements.txt
+	touch project/bin/activate
+
+venv: project/bin/activate
 
 # Get data from request
 data/lyrics.csv data/spotify_track_data.csv data/wiki_hot_100s.csv: src/download.py
@@ -32,8 +39,21 @@ database: song_analytics.db
 test: venv
 	pytest
 
+# Run the Flask application
 app: app/app.py
 	python app/app.py
 
+clean-tests:
+	rm -rf test/.pytest_cache
+# 	mkdir test/model/test
+# 	touch test/model/test/.gitkeep
+	
+clean-env:
+	rm -r project
 
-all: download read_data model evaluate database test app
+clean-pyc:
+	find . -name '*.pyc' -exec rm -f {} +
+	rm -rf .pytest_cache
+
+
+all: venv download read_data model evaluate database test app clean-tests clean-env clean-pyc

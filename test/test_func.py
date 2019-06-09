@@ -75,7 +75,7 @@ def model():
 	lyrics = "Quando sono solo Sogno all'orizzonte E mancan le parole Sì lo so che non c'è luce In una stanza quando manca il sole Se non ci sei tu con me, con me"
 	test_model = model("lyrics_trac_train_test.xlsx","test_model.sav")
 	dance = test_model.predict([lyrics])
-	assert dance>=0 and dance<=1
+	assert (dance>=0) and (dance<=1)
 
 
 
