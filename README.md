@@ -24,15 +24,15 @@
 <!-- tocstop -->
 
 ## Project Charter 
-**This Branch is for Midpoint Check**
+**This Branch is for RDS deployment. Please checkout Local branch for the codes working on local.**
 
-**Vision**: Nowadays music is a lucrative industry and is in everywhere of people's life. The project is tend to use the data science to figure out the "secret recipe", such as lyrics, length and so on, that make a song popular and to understand the difference in popularity trend between different years/genre.
+**Vision**: Music industry, as its long history, has changed a lot throughout the years, both in melody and lyrics. The project is intended to predict the song's danceability from its lyrics.
 
-**Mission**: By inputting information of a song such as lyric, genre and etc., the web app will predict the popularity rank from 1 (the most popular) to 100 (the least popular).
+**Mission**: By inputting information of a song such as lyric, genre and etc., the web app will predict the danceability in scale 0 to 1.
 
 **Success criteria**: 
 * ML criteria: The dataset will be separated into training set and testing set. MSE could be used as the machine learning measurement to evaluate models and choose the optimal one.  
-* Business criteria: By predicting the popularity of a song, the web app could possibly help song writers to increase exposures of their songs and thus increase their incomes. The success of the app could be measured by users satisfication rate as well as the year of year increase in income of active users.
+* Business criteria: By predicting the danceability of the song using the lyrics, the app will help the user to know the song even before listening to it. To measure how good the app is, user satisfaction rating is needed.
 
 
 ## Planning
