@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import logging
 
 import sys
 import os
@@ -14,6 +15,8 @@ from src.model import model
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+logger = logging.getLogger(__name__)
+
 def test_split():
 	"""unitest for the clean_data function"""
 	lyrics = "test/lyrics_test.csv"
@@ -24,10 +27,11 @@ def test_split():
 	df_hot = pd.read_csv(billboard,index_col=0)
 
 	#clean the tie string in ranking
-	tieIndex = df_hot.index[df_hot['no']=='Tie'].tolist()
-	for index in tieIndex:
-		value = df_hot.no[index-1]
-		df_hot.loc[index,'no'] = value
+	if 'Tie' in df_hot['no'].values:
+		tieIndex = df_hot.index[df_hot['no']=='Tie'].tolist()
+		for index in tieIndex:
+			value = df_hot.no[index-1]
+			df_hot.loc[index,'no'] = value
 	#define rank variable that change the no variable to a binary response
 	df_hot['rank'] = df_hot['no'].apply(lambda x: 1 if int(x)<=10 else 0 )
 	#define popularity variable that change the no to a continuous variable
@@ -69,6 +73,7 @@ def test_split():
 	result_train.reset_index(drop=True,inplace=True)
 	result_test.reset_index(drop=True,inplace=True)
 	assert (test_train.equals(result_train)) and (test_test.equals(result_test))
+	logger.info("pass the split data test.")
 
 def model():
 	"""Testing the model that the return result should be within 0 and 1"""
@@ -76,6 +81,7 @@ def model():
 	test_model = model("lyrics_trac_train_test.xlsx","test_model.sav")
 	dance = test_model.predict([lyrics])
 	assert (dance>=0) and (dance<=1)
+	logger.info("pass the prediction test")
 
 
 

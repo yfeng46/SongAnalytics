@@ -46,10 +46,11 @@ def clean_data(lyrics,tracks,billboard):
 	df_hot = dfs[2]
 
 	#clean the tie string in ranking
-	tieIndex = df_hot.index[df_hot['no']=='Tie'].tolist()
-	for index in tieIndex:
-		value = df_hot.no[index-1]
-		df_hot.loc[index,'no'] = value
+	if 'Tie' in df_hot['no'].values:
+		tieIndex = df_hot.index[df_hot['no']=='Tie'].tolist()
+		for index in tieIndex:
+			value = df_hot.no[index-1]
+			df_hot.loc[index,'no'] = value
 	#define rank variable that change the no variable to a binary response
 	df_hot['rank'] = df_hot['no'].apply(lambda x: 1 if int(x)<=10 else 0 )
 	#define popularity variable that change the no to a continuous variable

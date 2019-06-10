@@ -1,5 +1,4 @@
 import argparse
-import boto3
 import pandas as pd
 import logging
 import yaml
